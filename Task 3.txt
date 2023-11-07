@@ -1,0 +1,36 @@
+import random
+
+PLAY = True
+while PLAY:
+
+    print("\nPlease enter:\n 1 for Rock\n 2 for Paper\n 3 for Scissor")
+    player_turn = int(input("\nChoose your input: "))
+    computer_turn = random.randint(1, 3)
+
+    choice = {1: "Rock", 2: "Paper", 3: "Scissors"}
+    print(f"Player: {choice[player_turn]}\tComputer: {choice[computer_turn]}")
+
+    pt = player_turn
+    ct = computer_turn
+    if (pt == ct):
+        print("It's Tie!")
+    elif (pt == 1 and ct == 2):
+        print("Paper covers Rock. Computer wins!")
+    elif (pt == 1 and ct == 3):
+        print("Rock smashes Scissors. Player wins!")
+    elif (pt == 2 and ct == 1):
+        print("Paper covers Rock. Player wins!")
+    elif (pt == 2 and ct == 3):
+        print("Scissors cuts Paper. Computer wins!")
+    elif (pt == 3 and ct == 1):
+        print("Rock smashes Scissors. Computer wins!")
+    elif (pt == 3 and ct == 2):
+        print("Scissors cuts Paper. Player wins!")
+
+    # ask the user if they want to continue play
+    print("\nDo you want to play again? (Yes/No)")
+    if (input() == "No"):
+        PLAY = False
+        print("Thank you for playing!")
+    else:
+        continue
